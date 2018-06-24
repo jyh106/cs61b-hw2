@@ -3,32 +3,31 @@ package hw2;
 import java.util.ArrayList;
 
 public class Grid {
-    public int gridTileSize;
-    ArrayList<Object> grid = new ArrayList<>();
+    /* Grid Data Structure
+        grid = {{0, 1, 2, 3, 4, 5,..N},{N+1, N+2.....}, {...}, {...}}
+     */
+    public int totalSites;
+    ArrayList<Object> sites = new ArrayList<>();
 
     public Grid(int N) {
-        gridTileSize = N * N;
+        totalSites = N * N;
+
         for (int i = 0; i < N; i++) {
-            grid.add(new ArrayList<Integer>());
+            sites.add(new ArrayList<Integer>());
         }
         this.assignIndex(N);
     }
 
-    public void assignIndex(int N){
-        int index  = 0;
-        for (Object row : this.grid) {
-            if (index >= this.gridTileSize) {
-                System.out.print(index + " is larger than gridSize " + this.gridTileSize);
+    public void assignIndex(int N) {
+        int index = 0;
+        for (Object row : this.sites) {
+            if (index >= this.totalSites) {
+                System.out.print(index + " is larger than gridSize " + this.totalSites);
             }
-            for (int i = 0; i < N; i++){
-                ((ArrayList)row).add(index);
-                System.out.print(index);
-                index ++;
+            for (int i = 0; i < N; i++) {
+                ((ArrayList) row).add(index);
+                index++;
             }
         }
     }
-
-//    public void main(String[] args){
-//        Grid newGrid = new Grid(10);
-//    }
 }

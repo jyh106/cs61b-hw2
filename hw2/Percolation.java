@@ -6,13 +6,13 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Percolation {
-    public ArrayList<Object> blockedSites = new ArrayList<>();
+    public ArrayList<Integer> blockedSites = new ArrayList<>();
     public ArrayList<Object> openedSites = new ArrayList<>();
     public ArrayList<Object> fullSites = new ArrayList<>();
 
     public WeightedQuickUnionUF Grid;
 
-    private int gridSize;
+    public int gridSize;
     private int totalNumberOfSites;
     private int virtualTopSite;
     private int virtualBottomSite;
@@ -50,7 +50,7 @@ public class Percolation {
         }
     }
 
-    private int findIndex(int row, int col) {
+    public int findIndex(int row, int col) {
         if (row == 0) {
             return col;
         } else {
